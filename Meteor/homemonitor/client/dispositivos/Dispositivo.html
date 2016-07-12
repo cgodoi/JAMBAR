@@ -1,0 +1,26 @@
+<template name="Dispositivo">
+	<article class='recipe {{#if inDashboard}}in-menu{{/if}}'>
+		<h3>{{nombre}}</h3>
+		{{#if editMode}} 
+			{{> quickForm collection="Dispositivos" id=updateDispositivoId type="update" doc=this autosave=true}}
+		{{else}}
+			<p>{{descripcion}}</p>
+			<p>
+			{{ #each caracteristicas}}
+				<span class="ingredient">{{nombre}} - {{valor}}</span>
+			{{/each}}
+			</p>
+			<a href="/dispositivo/{{_id}}">Ver mas</a>
+
+			<a class="waves-effect waves-light btn-large">Button</a>
+
+			{{#if inDashboard}}
+				<button class="btn-deny toggle-menu">Eliminar del dash</button> 
+			{{else}} 
+				<button class="btn-primary toggle-menu">Agregar al Dash</button> 
+			{{/if}}
+		{{/if}}
+		<i class="fa fa-pencil"></i>
+		<i class="fa fa-trash"></i>
+	</article>
+</template>

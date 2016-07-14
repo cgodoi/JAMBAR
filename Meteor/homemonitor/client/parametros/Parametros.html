@@ -1,0 +1,35 @@
+<template name="Parametros">
+{{#if $.Session.get 'nuevoSector'}}
+	{{> NuevoSector}}
+{{else}}
+	<button id="btnNuevoSector" class="new-recipe sector">Nuevo Sector</button>
+{{/if}}
+
+{{#if $.Session.get 'nuevoTipoDispositivo'}}
+	{{> NuevoTipoDispositivo}}
+{{else}}
+	<button id="btnNuevoTipoDispositivo" class="new-recipe tipoDispositivo">Nuevo Tipo Dispositivo</button>
+{{/if}}
+
+	<section class='recipes'>
+	<h3>Sectores</h3>
+		{{#if Template.subscriptionsReady}}
+			{{ #each sectores}}
+				{{> Sector}}
+			{{/each}}
+		{{else}}
+			<p>Cargando...</p>
+		{{/if}}
+	</section>
+
+	<section class='recipes'>
+	<h3>Tipo Dispositivos</h3>
+	{{#if Template.subscriptionsReady}}
+			{{ #each tipoDispositivos}}
+				{{> TipoDispositivo}}
+			{{/each}}
+		{{else}}
+			<p>Cargando...</p>
+		{{/if}}
+	</section>
+</template>

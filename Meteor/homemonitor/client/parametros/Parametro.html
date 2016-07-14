@@ -1,0 +1,21 @@
+<template name="Sector">
+	<article class='recipe'>
+		<h3>{{nombre}} - {{codigo}}</h3>
+		{{#if editMode}} 
+			{{> quickForm collection="Sectores" id=updateSectorId type="update" doc=this autosave=true}}
+		{{/if}}
+		<i class="fa fa-pencil"></i>
+		<i class="fa fa-trash"></i>
+	</article>
+</template>
+
+<template name="TipoDispositivo">
+	<article class='recipe'>
+		<h3>{{nombre}} - {{codigo}}</h3>
+		{{#if editMode}} 
+			{{> quickForm collection="TipoDispositivos" id=updateTipoDispositvoId type="update" doc=this autosave=true}}
+		{{/if}}
+		<i class="fa fa-pencil"></i>
+		<i class="fa fa-trash"></i>
+	</article>
+</template>

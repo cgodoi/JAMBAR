@@ -1,3 +1,12 @@
+ Meteor.publish('tipoDispositivos',function(){
+	//return Recipes.find({author:this.userId}) ;//solo las recipes del autor
+	return TipoDispositivos.find() ;//solo las recipes del autor
+ });
+
+ Meteor.publish('sectores',function(){
+	//return Recipes.find({author:this.userId}) ;//solo las recipes del autor
+	return Sectores.find() ;//solo las recipes del autor
+ });
  Meteor.publish('recipes',function(){
 	//return Recipes.find({author:this.userId}) ;//solo las recipes del autor
 	return Recipes.find() ;//solo las recipes del autor

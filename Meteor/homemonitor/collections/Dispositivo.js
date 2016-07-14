@@ -32,6 +32,20 @@ DispositivoSchema =  new SimpleSchema({
 		type:String,
 		label:"Descripcion"
 	},
+	 sector: {
+      	type: String,
+      	label: 'Sector',
+      	autoform: {
+      	firstOption: 'Seleccione Sector',
+      		options: function () {
+        		return Sectores.find().map( function ( c ) {
+            													return {label: c.nombre,
+            															value: c._id };
+            																	 }
+            													);
+      							},
+    				}
+	},
 	caracteristicas:{
 		type:[Caracteristica]
 	},

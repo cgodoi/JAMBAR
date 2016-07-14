@@ -27,6 +27,15 @@ FlowRouter.route('/',{
 	
 });
 
+/*parametria*/
+FlowRouter.route('/parametros',{
+	name:'parametros',
+	action(){
+		BlazeLayout.render('MainLayout',{main:'Parametros'});
+	}
+});
+
+/*fin parametria*/
 
 FlowRouter.route('/dispositivos',{
 	name:'dispositivos',

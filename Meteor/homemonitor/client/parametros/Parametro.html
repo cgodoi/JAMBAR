@@ -19,3 +19,14 @@
 		<i class="fa fa-trash"></i>
 	</article>
 </template>
+
+<template name="Modulo">
+	<article class='recipe'>
+		<h3>{{nombre}} - {{codigo}}</h3>
+		{{#if editMode}} 
+			{{> quickForm collection="Modulos" id=updateModuloId type="update" doc=this autosave=true}}
+		{{/if}}
+		<i class="fa fa-pencil"></i>
+		<i class="fa fa-trash"></i>
+	</article>
+</template>

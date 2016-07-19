@@ -9,3 +9,9 @@ Template.NuevoTipoDispositivo.events({
 		Session.set('nuevoTipoDispositivo',false)
 	}
 });
+
+Template.NuevoModulo.events({
+	'click .fa-close' : function(){
+		Session.set('nuevoModulo',false)
+	}
+});

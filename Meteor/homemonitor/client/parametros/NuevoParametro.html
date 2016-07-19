@@ -1,5 +1,6 @@
 <template name="NuevoSector">
 <div class="new-recipe-containter">
+<h1>Nuevo Sector</h1>
 <i class="fa fa-close"></i>
 	{{> quickForm collection="Sectores" id="insertSectorForm" type="insert" class="new-recipe-form"}}
 </div>
@@ -8,8 +9,18 @@
 
 <template name="NuevoTipoDispositivo">
 <div class="new-recipe-containter">
+<h1>Nuevo Tipo Dispositivo</h1>
 <i class="fa fa-close"></i>
 	{{> quickForm collection="TipoDispositivos" id="insertTipoDispositivoForm" type="insert" class="new-recipe-form"}}
+</div>
+
+</template>
+
+<template name="NuevoModulo">
+<div class="new-recipe-containter">
+<h1>Nuevo Modulo</h1>
+<i class="fa fa-close"></i>
+	{{> quickForm collection="Modulos" id="insertModuloForm" type="insert" class="new-recipe-form"}}
 </div>
 
 </template>

@@ -4,7 +4,6 @@
 		{{#if editMode}} 
 			{{> quickForm collection="Dispositivos" id=updateDispositivoId type="update" doc=this autosave=true}}
 		{{else}}
-			<p>{{descripcion}}</p>
 			<p>
 			{{ #each caracteristicas}}
 				<span class="ingredient">{{nombre}} - {{valor}}</span>

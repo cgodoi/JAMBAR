@@ -1,7 +1,7 @@
 //control router login usuario
 if(Meteor.isClient){
 	Accounts.onLogin(function(){
-		FlowRouter.go('recipe-book');
+		FlowRouter.go('dash');
 	});
 
 	Accounts.onLogout(function(){
@@ -20,11 +20,19 @@ FlowRouter.route('/',{
 	name:'home',
 	action(){
 		if(Meteor.userId()){
-			FlowRouter.go('recipe-book'); //si esta logeado, ir al recipe book
+			FlowRouter.go('dash'); //si esta logeado, ir al recipe book
 		}
 		BlazeLayout.render('HomeLayout');
 	}
 	
+});
+
+/*dashppal*/
+FlowRouter.route('/dash',{
+	name:'dash',
+	action(){
+		BlazeLayout.render('MainLayout',{main:'Dash'});
+	}
 });
 
 /*parametria*/

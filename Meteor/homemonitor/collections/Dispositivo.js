@@ -28,9 +28,33 @@ DispositivoSchema =  new SimpleSchema({
 		type:String,
 		label:"Nombre"
 	},
-	descripcion:{
-		type:String,
-		label:"Descripcion"
+	modulo:{
+		type: String,
+    	label: 'Modulo',
+      	autoform: {
+      	firstOption: 'Seleccione modulo del dispositivo',
+      		options: function () {
+        		return Modulos.find().map( function ( c ) {
+            													return {label: c.nombre,
+            															value: c._id };
+            																	 }
+            													);
+      							},
+    				}		
+    			},
+	tipoDispositivo: {
+      	type: String,
+      	label: 'Tipo dispositivo',
+      	autoform: {
+      	firstOption: 'Seleccione tipo de dispositivo',
+      		options: function () {
+        		return TipoDispositivos.find().map( function ( c ) {
+            													return {label: c.nombre,
+            															value: c._id };
+            																	 }
+            													);
+      							},
+    				}
 	},
 	 sector: {
       	type: String,

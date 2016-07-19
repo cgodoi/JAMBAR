@@ -5,6 +5,12 @@
 	<button id="btnNuevoSector" class="new-recipe sector">Nuevo Sector</button>
 {{/if}}
 
+{{#if $.Session.get 'nuevoModulo'}}
+	{{> NuevoModulo}}
+{{else}}
+	<button id="btnNuevoModulo" class="new-recipe Modulo">Nuevo Modulo</button>
+{{/if}}
+
 {{#if $.Session.get 'nuevoTipoDispositivo'}}
 	{{> NuevoTipoDispositivo}}
 {{else}}
@@ -16,6 +22,19 @@
 		{{#if Template.subscriptionsReady}}
 			{{ #each sectores}}
 				{{> Sector}}
+			{{/each}}
+		{{else}}
+			<p>Cargando...</p>
+		{{/if}}
+	</section>
+
+	<section class='recipes'>
+	<h3>Modulos</h3>
+		{{#if Template.subscriptionsReady}}
+			{{ #each modulos}}
+				{{> Modulo}}
+				{{else}}
+				<h4>No existen modulos </h4>
 			{{/each}}
 		{{else}}
 			<p>Cargando...</p>

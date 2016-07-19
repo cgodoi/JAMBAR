@@ -5,6 +5,8 @@ Template.Dispositivos.onCreated(function(){
 	self.autorun(function(){
 		self.subscribe('dispositivos');
 		self.subscribe('sectores');
+		self.subscribe('tipoDispositivos');
+		self.subscribe('modulos');
 	});
 });
 

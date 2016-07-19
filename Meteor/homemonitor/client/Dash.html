@@ -1,0 +1,15 @@
+<template name="Dash">
+<h1 class="page-title">Mi Dashboard</h1>
+{{#each dispositivos}}
+	{{>MenuItem}}
+{{else}}
+	<h3> No existen <a href="/dispositivos">dispositivos</a> en tu dashboard</h3>
+{{/each}}
+</template>
+
+<template name="MenuItem">
+	<div class="menu-item">
+		<h3>{{nombre}}</h3>
+		<p>{{codigo}}</p>
+	</div>
+</template>

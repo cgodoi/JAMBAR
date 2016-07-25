@@ -25,7 +25,7 @@ this.editMode = new ReactiveVar(false);
 });
 
 Template.TipoDispositivo.helpers({
-	updateTipoDispositivoId: function(){
+	updateTipoDispositvoId: function(){
 		return this._id;
 	},
 	editMode:function(){

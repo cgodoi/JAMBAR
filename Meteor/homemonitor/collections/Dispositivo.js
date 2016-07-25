@@ -81,6 +81,14 @@ DispositivoSchema =  new SimpleSchema({
 			type:"hidden"
 		}
 	},
+	estado:{
+		type:Boolean,
+		defaultValue:false,
+		optional:true,
+		autoform:{
+			type:"hidden"
+		}
+	},
 	author:{
 		type:String,
 		label:"Author",
@@ -113,6 +121,14 @@ Meteor.methods({
 	},
 	deleteDispositivo:function(id){
 		Dispositivos.remove(id);
+	},
+	togglePrendeApaga:function(id,currentState){
+		console.log(this);
+		Dispositivos.update(id,{
+			$set:{
+				estado:!currentState
+			}
+		});
 	}
 });
 

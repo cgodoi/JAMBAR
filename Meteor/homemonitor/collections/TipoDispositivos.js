@@ -19,6 +19,10 @@ TipoDispositivoSchema =  new SimpleSchema({
 		type:String,
 		label:"Codigo"
 	},
+	icono:{
+		type:String,
+		label:"Icono"
+	},
 	createdAt:{
 		type:Date,
 		label:"Created At",

@@ -1,33 +1,39 @@
 <template name="Dash">
 <h1 class="page-title">Mi Dashboard</h1>
- {{#each sector in sectores}}
- <h3>{{sector.nombre}}</h3>
-	{{#each tipoDispositivo in tipoDispositivos}}
-		{{#each dispositivo in dispositivos sector._id tipoDispositivo._id}}
-			<div class="dash-item">
-				<i class="fa {{tipoDispositivo.icono}}"></i>
-				{{tipoDispositivo.nombre}}
-				<h3>{{dispositivo.nombre}}</h3>
+{{#each sector in sectores}}
+	<h3>{{sector.nombre}}</h3>
+		{{#each tipoDispositivo in tipoDispositivos}}
+			{{#each dispositivo in dispositivos sector._id tipoDispositivo._id}}
+				<div class="dash-item">
+					<div  class = "dash-item1">
+						<i class="{{tipoDispositivo.icono}}"></i>
+						<button class="btn-deny toggle-btn">ON</button> 
+						<h3>{{dispositivo.nombre}}</h3>
+						{{#if compare tipoDispositivo.nombre "ILUMINACION"}}
+							<button class="btn-deny toggle-btn">ON</button> 
+						{{/if}}
 
-				{{#if tipoDispositivo.nombre = "ILUMINACION"}}
-					<button class="btn-deny toggle-btn">Prender</button> 
-				{{/if}}
-				{{#if tipoDispositivo.nombre = "TEMPERATURA"}}
-					<button class="btn-primary toggle-btn">Apagar</button> 
-				{{/if}}
-			</div>
-		<!--	{{> DashItem}}
-		{{else}}
-			<h3> No existen <a href="/dispositivos">dispositivos</a> en tu dashboard</h3>-->
+						{{#if compare tipoDispositivo.nombre "SENSOR TEMPERATURA"}}
+							<i class="wi wi-humidity">32</i>
+							<i class="wi wi-thermometer">45</i>
+						{{/if}}
+					</div>
+					<div class="dash-item2">
+					<i class="fa fa-pencil"></i>
+					<i class="fa fa-history"></i>
+					</div>
+				</div>
+			{{/each}}
 		{{/each}}
-	{{/each}}
+	{{else}}
+	<h3> No existen <a href="/parametros">Sectores</a> para incluir en tu dashboard</h3>
 {{/each}}
 
 </template>
 
 <template name="DashItem">
-	<div class="menu-item">
-		<h3>{{this.nombre}}</h3>
-		<p>{{this.codigo}}</p>
+	<div class="dash-item">
+		<h3>{{tipoDispositivo.nombre}}</h3>
+		<p>{{tipoDispositivo.codigo}}</p>
 	</div>
 </template>
